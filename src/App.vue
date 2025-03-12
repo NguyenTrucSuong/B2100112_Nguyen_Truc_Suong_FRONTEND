@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     searchContact() {
-      this.selectedIndex = -1; // Reset lựa chọn khi tìm kiếm
+      this.selectedIndex = -1; 
     }
   }
 };
@@ -60,7 +60,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* Căn giữa theo chiều dọc */
+  min-height: 100vh;
 }
 
 .d-flex {
