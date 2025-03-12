@@ -38,16 +38,16 @@
           <h4>Chi tiết Liên hệ <i class="fas fa-address-card"></i></h4>
           <ContactCard :contact="activeContact" />
           
-          <!-- Đường liên kết đến trang hiệu chỉnh -->
+          <!-- 🔗 Nút chuyển đến trang chỉnh sửa -->
           <router-link
-            v-if="activeContact"
             :to="{
               name: 'contact.edit',
               params: { id: activeContact._id },
             }"
-            class="btn btn-warning mt-2"
           >
-            <i class="fas fa-edit"></i> Hiệu chỉnh
+            <span class="mt-2 badge badge-warning">
+              <i class="fas fa-edit"></i> Hiệu chỉnh
+            </span>
           </router-link>
         </div>
       </div>
@@ -92,9 +92,6 @@ export default {
       if (this.activeIndex < 0) return null;
       return this.filteredContacts[this.activeIndex];
     },
-    filteredContactsCount() {
-      return this.filteredContacts.length;
-    },
   },
   methods: {
     async retrieveContacts() {
@@ -131,21 +128,20 @@ export default {
 };
 </script>
 
-<style scoped>
-.page {
-  text-align: left;
-  max-width: 750px;
-}
+<style>
 .mt-3.d-flex {
-  gap: 10px;
-  justify-content: center;
+  gap: 10px;  /* Khoảng cách giữa các nút */
+  justify-content: center; /* Căn giữa các nút */
 }
+
 button {
-  min-width: 120px;
+  min-width: 120px; /* Đảm bảo nút không quá nhỏ */
   font-size: 16px;
   padding: 10px 15px;
 }
+
 .btn i {
-  margin-right: 5px;
+  margin-right: 5px; /* Khoảng cách giữa icon và chữ */
 }
+
 </style>
